@@ -26,13 +26,13 @@ jobs:
 
     steps:
       - name: Checkout sub-store-workers
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: sub-store-workers
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout Sub-Store (upstream)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: sub-store-org/Sub-Store
           path: Sub-Store
@@ -73,7 +73,7 @@ jobs:
 
       - name: Setup Node
         if: steps.check.outputs.needed == 'true'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '24'
           cache: 'npm'
